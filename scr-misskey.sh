@@ -1,12 +1,11 @@
 
 # screenshot and upload to misskey
-# Dependencies: scrot, curl, jq, vim, feh, convert(ImageMagick)
+# Dependencies: scrot, curl, jq, vscode, convert(ImageMagick)
 
 # config.sh should contain:
 #   misskey_token
-#   misskey_root(eg. https://misskey.io/api)
-#   folder_name(eg. screenshot)
-#   terminal_emulator_start_command(eg. wezterm start)
+#   misskey_root(e.g. https://misskey.io/api)
+#   folder_name(e.g. screenshot)
 
 source ~/.config/i3/scr-misskey/config.sh
 
@@ -15,10 +14,9 @@ rm ~/tmp/scr-misskey.png ~/tmp/scr-misskey.jpg
 scrot -u ~/tmp/scr-misskey.png
 convert ~/tmp/scr-misskey.png -quality 80 ~/tmp/scr-misskey.jpg
 
-# display image by feh
+# display image by vscode
 
-feh ~/tmp/scr-misskey.jpg --zoom 50% &
-feh_pid=$!
+code ~/tmp/scr-misskey.jpg
 
 # prepare text file which user input message etc.
 
@@ -47,13 +45,8 @@ exec 3>&-
 
 # edit text file by vim
 
-# start vim in terminal emulator
-eval "${terminal_emulator_start_command} -- vim ~/tmp/scr-misskey.txt"
-vim_pid=$!
-
-wait ${vim_pid}
-
-kill ${feh_pid}
+# open text file by vscode
+code --wait ~/tmp/scr-misskey.txt
 
 # analyse text file
 

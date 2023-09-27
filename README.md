@@ -20,4 +20,4 @@ scrot, curl, jq, vscode, convert(ImageMagick) に依存しています。
 - misskey_token
 - misskey_root(例えば、https://misskey.io/api)
 - folder_name(misskeyのドライブ内で使われます。デフォルトはscr-misskey)
-- workspace(デフォルトは/tmp/scr-misskey)
+- workspace(デフォルトは~/tmp/scr-misskey)

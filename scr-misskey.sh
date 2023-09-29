@@ -7,7 +7,7 @@
 #   misskey_root(e.g. https://misskey.io/api)
 # config.sh can contain:
 #   folder_name(e.g. scr-misskey)
-#   workspace(e.g. ~/tmp/scr-misskey)
+#   workspace(e.g. ${$HOME}/tmp/scr-misskey)
 
 source "$(dirname ${0})/config.sh"
 
@@ -16,7 +16,7 @@ if [ -z "${folder_name}" ]; then
   folder_name="scr-misskey"
 fi
 if [ -z "${workspace}" ]; then
-  workspace="~/tmp/scr-misskey"
+  workspace="${HOME}/tmp/scr-misskey"
 fi
 
 mkdir -p ${workspace}

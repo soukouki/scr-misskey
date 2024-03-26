@@ -16,7 +16,7 @@ if [ -z "${folder_name}" ]; then
   folder_name="scr-misskey"
 fi
 if [ -z "${workspace}" ]; then
-  workspace="${HOME}/tmp/scr-misskey"
+  workspace="/tmp/scr-misskey"
 fi
 
 mkdir -p ${workspace}
